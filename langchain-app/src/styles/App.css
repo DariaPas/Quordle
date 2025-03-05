@@ -1,0 +1,475 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-img {
+  width: 200px;
+  height: 200px;
+}
+
+.Game {
+  padding-bottom: 8px
+}
+
+.Game,h1 {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+
+.game__container-outer {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+}
+
+.game__container-inner {
+  flex: 1 1 auto;
+  margin: auto;
+
+  overflow: hidden;
+  width: 100%
+}
+
+
+.Game-keyboard {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 550px;
+  width: 100%
+}
+
+.Game-keyboard-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch
+}
+
+.Game-keyboard-button {
+  align-items: center;
+  background-color: #cbd3df;
+  border-left-color: rgb(22, 28, 45);
+  border-radius: 4px;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex: 1 1;
+  font-size: 20px;
+  justify-content: center;
+  margin: 3px;
+  min-height: 40px;
+  text-decoration: inherit
+}
+
+.Game-keyboard-button-wide {
+  flex: 2 1
+}
+
+.Game-keyboard-button:focus {
+  outline: none
+}
+.button {
+  background-color: #ffffff; /* Button background color */
+  border: 2px solid #3498db; /* Button border color */
+  color: #3498db; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  font-size: 16px; /* Button text size */
+  cursor: pointer; /* Cursor style */
+  border-radius: 5px; /* Button border radius */
+  transition: all 0.3s ease; /* Transition effect */
+}
+
+/* Hover effect */
+.button:hover {
+  background-color: #3498db; /* Button background color on hover */
+  color: #ffffff; /* Button text color on hover */
+}
+
+/* Icon style */
+.button-icon {
+  margin-right: 5px; /* Margin between icon and text */
+}
+
+
+.Row-letter {
+  border-radius: .25rem;
+  font-size: inherit;
+  height: 100%;
+  margin: .125rem;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 20%;
+  text-align: center;
+  border: 0px;
+}
+
+.Row-letter {
+  background-color: #e7ebf1;
+  border-radius: 5px;
+  color: #363535;
+  display: flex;
+  flex: 1 1;
+  font-weight: 700;
+  text-transform: uppercase
+}
+
+.Row,.Row-letter {
+  align-items: center;
+  justify-content: center
+}
+
+.Row {
+  box-sizing: border-box;
+  display: flex;
+  font-size: calc(1.8vh + 2.5px);
+  font-size: var(--adaptive-font);
+  height: 2.5vh;
+  height: 16.775px;
+  margin: .125rem;
+  width: 100%
+}
+
+.Row-current {
+  font-size: calc(2vh + 4px);
+  font-size: var(--adaptive-font-large);
+  height: 4.5vh;
+  height: 32.825px;
+}
+
+@media screen and (min-height: 1024px) {
+  .Row {
+      box-sizing:border-box;
+      display: flex;
+      margin: .125rem;
+      width: 100%
+  }
+
+  .Row,.Row-current {
+      height: max(40px,2.5vh);
+      height: max(40px,var(--adaptive-height))
+  }
+}
+
+.row_field {
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  padding: .25rem .25rem 0
+}
+
+.row__field:focus {
+  outline: none
+}
+
+.game_container-outer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 100%
+}
+
+.game_container-inner {
+  flex: 1 1 auto;
+  margin: auto;
+  max-width: 550px;
+  overflow: hidden;
+  width: 100%
+}
+
+.game_boards {
+  width: 100%
+}
+
+.game_boards-row {
+  display: flex;
+  width: 100%
+}
+
+.Game-options {
+  display: flex;
+  justify-content: right;
+  margin: 0 auto;
+  max-width: 350px;
+  min-height: 42px;
+  padding: 4px
+}
+
+.Game-options-playing {
+  justify-content: space-between
+}
+
+.Game-options .App-button {
+  height: 27px;
+  margin: 4px 3px 0;
+  min-height: 0
+}
+
+.App-button-marked {
+  background-color: #ae525230;
+  font-size: .9em;
+  font-weight: 600;
+  letter-spacing: .5px;
+  line-height: 11px;
+  padding: 4px 18px;
+  text-align: center;
+  white-space: nowrap
+}
+
+.App-button {
+  align-items: center;
+  background: #52ae9030;
+  border: none;
+  border-radius: 30px;
+  color: #626568;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  line-height: 20px;
+  margin: 3px;
+  min-height: 35px;
+  padding: 4px 14px
+}
+
+body.dark .App-button {
+  background: #61d9b2cc
+}
+
+.App-button:hover {
+  background: #5277ae30;
+  color: #626568
+}
+
+body.dark .App-button:hover {
+  background: #79a6e9db
+}
+
+.App-button:disabled {
+  background-color: #3e485730;
+  color: #8c8e91
+}
+
+.Game-challenge-bar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  min-height: 18px
+}
+
+.Game-challenge-bar button {
+  width: 340px
+}
+
+.App-page {
+  margin: 10px auto;
+  max-width: 640px;
+  width: 100%
+}
+
+
+.App-title {
+  align-items: center;
+  background-color: #d2e4ee;
+  border-radius: 6px;
+  display: flex;
+  font-size: 24px;
+  height: 40px;
+  justify-content: center;
+  max-width: 650px;
+  min-width: 100%;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.App-button-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 35px;
+  padding: 0;
+  position: absolute;
+  right: 8px;
+  width: 35px
+}
+
+
+.App-about {
+  line-height: 1.4;
+  padding-bottom: 10px;
+  padding-top: 10px
+}
+
+
+.letter-correct {
+  background-color: #57ac78;
+  border: none;
+  color: #fff!important
+}
+
+.letter-elsewhere {
+  background-color: #e9c601;
+  border: none;
+  color: #fff!important
+}
+
+.letter-absent {
+  background-color: #a2a2a2;
+  border: none;
+  color: #fff!important
+}
+
+.Top-window-title {
+  align-items: center;
+  background-color: #f1f3f9;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-grow: 1;
+  font-size: 24px;
+  font-weight: 800;
+  height: 50px;
+  justify-content: center;
+  padding: 5px;
+  position: relative
+}
+
+body.dark .Top-window-title {
+  background: #9b9a9a;
+  color: #363535
+}
+
+.Top-window-content {
+  height: 100%;
+  padding: 5px 20px;
+  width: 100%
+}
+
+.stats-container {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 5px 0 15px;
+  padding: 0
+}
+
+.stat-item {
+  background: #f5f7fb;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  margin-left: 0;
+  min-height: 88px;
+  padding: 7px;
+  text-align: center;
+  width: calc(33% - 15px)
+}
+
+.stat-value {
+  font-size: 42px;
+  font-weight: 700
+}
+
+.stat-description {
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: uppercase
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px
+}
+
+
+
+
+.stats-chart table .number {
+  font-size: 16px;
+  padding-right: 15px;
+  vertical-align: middle
+}
+
+.stats-chart table .amount {
+  font-size: 16px;
+  font-weight: 700;
+  padding-left: 11px;
+  vertical-align: middle
+}
+
+.stats-chart table td:nth-child(2) {
+  width: 100%
+}
+
+.stats-chart table .percentage {
+  background: #e7ebf2;
+  border-radius: 50px;
+  color: #565d70;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  height: 22px;
+  line-height: 22px;
+  padding: 0 10px;
+  position: relative;
+  width: 100%
+}
+
+.invisible {
+  display: none;
+}
+
+.App-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Asegúrate de que el contenedor tenga altura */
+}
+
+
